@@ -22,7 +22,9 @@
         unzip -l '这里填写JAR包路径' org/apache/logging/log4j/core/lookup/JndiLookup.class
         ```
    * 方式2: 使用本仓库 `log4j2-core` 目录下同名 JAR 包替换  
-     本仓库的 jar 包来自 maven 仓库，仅敲除 `JndiLookup.class`，没有其它任何改动。在确认文件名相同的情况下，可直接替换文件，重启应用程序后生效。
+     本仓库的 jar 包来自 maven 仓库，仅敲除 `JndiLookup.class`，没有其它任何改动。在确认文件名相同的情况下，可直接替换文件。
+
+3. 重启应用程序后缓解措施生效
 
 ## 原理
 

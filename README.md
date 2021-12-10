@@ -3,12 +3,12 @@
 国际镜像：https://github.com/zhangyoufu/log4j2-without-jndi
 国内镜像：https://code.aliyun.com/zhangyoufu/log4j2-without-jndi/tree/master
 
-## 使用说明
+## 使用方式
 
 1. 寻找部署目录下的 `log4j2-core` 组件  
    执行以下命令在文件系统中搜索
    ```
-   find . -name 'log4j2-core*.jar'
+   find . -name '*log4j2-core*.jar'
    ```
 
 2. 对找到的 `log4j2-core` JAR 包实施缓解措施
@@ -23,3 +23,11 @@
         ```
    * 方式2: 使用本仓库 `log4j2-core` 目录下同名 JAR 包替换  
      本仓库的 jar 包来自 maven 仓库，仅敲除 `JndiLookup.class`，没有其它任何改动。在确认文件名相同的情况下，可直接替换文件，重启应用程序后生效。
+
+## 原理
+
+为了兼容部分没有提供 JNDI 实现的 JRE，Apache 官方在 [LOG4J2-703](https://github.com/apache/logging-log4j2/commit/3203d3eab6bdd12fdad7ded1860db16a89468c3f) 改动中对 `${jndi:xxx}` 的注册步骤包裹了一层 `try/catch`，在 `JndiLookup` 类实例化失败时仅记录告警日志，不会抛出异常。通过删除 `JndiLookup.class` 文件，我们阻止了 `${jndi:xxx}` 的注册，使漏洞无法被触发。
+
+* 该缓解手段对 log4j2 正式发版的所有版本有效，而 `log4j2.formatMsgNoLookups` 仅对 log4j ≥ 2.10 有效
+* 该缓解手段避免了禁用 lookup 功能对 `${date:xxx}`、`${ctx:xxx}` 等正常功能的影响
+* `log4j2.xml` / `log4j2.properties` / `-classpath` 对于某些部署场景不好修改，或者在运行时被程序指定/覆盖，直接修改 jar 包更简单有效

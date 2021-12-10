@@ -49,3 +49,8 @@ This mitigation was [acknowledged by log4j2 team](https://github.com/apache/logg
 * https://mail-archives.apache.org/mod_mbox/www-announce/202112.mbox/%3C643bc702-4b46-411b-4980-1fcf637dbb11@apache.org%3E
 * https://github.com/apache/logging-log4j2/pull/608
 * https://github.com/tangxiaofeng7/apache-log4j-poc
+
+## Other mitigations
+
+* https://github.com/Glavo/log4j-patch (override original implementation by prepend it into classpath)
+* https://github.com/LoliKingdom/NukeJndiLookupFromLog4j (remove "jndi" handler on runtime)

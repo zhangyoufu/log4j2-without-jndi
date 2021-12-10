@@ -50,3 +50,8 @@
 * https://mail-archives.apache.org/mod_mbox/www-announce/202112.mbox/%3C643bc702-4b46-411b-4980-1fcf637dbb11@apache.org%3E
 * https://github.com/apache/logging-log4j2/pull/608
 * https://github.com/tangxiaofeng7/apache-log4j-poc
+
+## 其他缓解措施
+
+* https://github.com/Glavo/log4j-patch (插入 classpath 覆盖原有实现)
+* https://github.com/LoliKingdom/NukeJndiLookupFromLog4j (运行时删除 "jndi" 处理)

@@ -1,6 +1,6 @@
-# Log4j2 日志内容 JNDI 注入 RCE 缓解措施（log4j2 官方认可）
+# Log4j2 日志内容 JNDI 注入 RCE 缓解措施
 
-国际镜像：https://github.com/zhangyoufu/log4j2-without-jndi
+国际镜像：https://github.com/zhangyoufu/log4j2-without-jndi  
 国内镜像：https://code.aliyun.com/zhangyoufu/log4j2-without-jndi/tree/master
 
 ## 使用方式

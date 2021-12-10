@@ -1,0 +1,7 @@
+.DS_Store
+log4j2-core/log4j-api-*.jar
+log4j2-core/Makefile
+log4j2-core/HelloWorld.java
+log4j2-core/HelloWorld.class
+log4j2-core/log4j2.properties
+log4j2-core/log4j2.xml

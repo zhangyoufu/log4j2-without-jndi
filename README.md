@@ -1,4 +1,4 @@
-# Log4j2 日志内容 JNDI 注入 RCE 缓解措施
+# CVE-2021-44228 Log4j2 日志内容 JNDI RCE 缓解措施
 
 [English version](README_en.md)
 

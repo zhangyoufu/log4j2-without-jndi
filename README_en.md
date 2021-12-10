@@ -1,4 +1,4 @@
-# Log4j2 JNDI Injection RCE Mitigation
+# CVE-2021-44228 Log4j2 JNDI RCE Mitigation
 
 [Chinese version](README.md)
 

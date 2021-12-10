@@ -25,7 +25,7 @@
 
 3. Restart you application for the mitigation to become effective.
 
-## Principal
+## How does it work?
 
 To improve compatibility on some JRE that does not provide JNDI, changeset [LOG4J2-703](https://github.com/apache/logging-log4j2/commit/3203d3eab6bdd12fdad7ded1860db16a89468c3f) wraps `${jndi:xxx}` registration with `try/catch`.
 When `JndiLookup` instansiation failed, there will be only warning log instead of throw an exception.

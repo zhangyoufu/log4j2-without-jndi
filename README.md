@@ -42,6 +42,10 @@
 
 > Thank you @zhangyoufu for the suggested workaround for older versions of log4j to remove the JndiLookup.class class! The team likes your idea and we will include the workaround you suggested in the release notes and announcement email. Many thanks!
 
-## Credit
+## 参考链接
 
-Youfu Zhang of Chaitin (长亭科技)
+* https://nvd.nist.gov/vuln/detail/CVE-2021-44228
+* https://github.com/advisories/GHSA-jfh8-c2jp-5v3q
+* https://logging.apache.org/log4j/2.x/security.html
+* https://github.com/apache/logging-log4j2/pull/608
+* https://github.com/tangxiaofeng7/apache-log4j-poc

@@ -4,7 +4,7 @@
 
 ## Usage
 
-1. Locate `log4j2-core` component under deploy folder  
+1. Locate `log4j2-core` component under deploy path  
    Execute the following command to find in your filesystem
    ```
    find . -name '*log4j2-core*.jar'

@@ -8,19 +8,18 @@
 ## 使用方式
 
 1. 寻找部署目录下的 `log4j2-core` 组件  
-   执行以下命令在文件系统中搜索
    ```
    find . -name '*log4j-core*.jar'
    ```
 
 2. 对找到的 `log4j2-core` JAR 包实施缓解措施
-   * 方式1: 使用 `zip` 命令（推荐）
-     执行以下命令从指定 JAR 包中删除 `JndiLookup.class`
+   * 方式1: 使用 `zip` 命令从 JAR 包中删除 `JndiLookup.class`（推荐）
      ```
      zip -q -d '这里填写JAR包路径' org/apache/logging/log4j/core/lookup/JndiLookup.class
      ```
    * 方式2: 使用本仓库 `log4j2-core` 目录下同名 JAR 包替换  
-     本仓库的 JAR 包来自 maven 仓库，仅敲除 `JndiLookup.class`，没有其它任何改动。在确认文件名相同的情况下，可直接替换文件。
+     本仓库的 JAR 包来自 maven 仓库，仅敲除 `JndiLookup.class`，没有其它任何改动。  
+     在确认文件名相同的情况下，可直接替换文件。
 
 3. 重启应用程序后缓解措施生效
 

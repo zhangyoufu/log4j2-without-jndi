@@ -5,19 +5,18 @@
 ## Usage
 
 1. Locate `log4j2-core` component under deploy path  
-   Execute the following command to find in your filesystem
    ```
    find . -name '*log4j-core*.jar'
    ```
 
 2. Apply mitigation against `log4j2-core` JARs found above
-   * Method 1: Use `zip` command (recommended)
-     Execute the following command to remove `JndiLookup.class` from the JAR you specified
+   * Method 1: Use `zip` command to remove `JndiLookup.class` from the JAR (recommended)
      ```
      zip -q -d 'JAR_path_here' org/apache/logging/log4j/core/lookup/JndiLookup.class
      ```
    * Method 2: Replace your JAR with patched JAR from this repo (under `log4j2-core/` directory)  
-     All JARs included in this repo comes from maven, with `JndiLookup.class` removed and no further modification. You can replace your JAR safely if the filename matches.
+     All JARs included in this repo comes from maven, with `JndiLookup.class` removed and no further modification.  
+     You can replace your JAR safely if the filename matches.
 
 3. Restart you application for the mitigation to become effective.
 

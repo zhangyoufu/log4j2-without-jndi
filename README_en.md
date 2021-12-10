@@ -46,5 +46,6 @@ This mitigation was [acknowledged by log4j2 team](https://github.com/apache/logg
 * https://nvd.nist.gov/vuln/detail/CVE-2021-44228
 * https://github.com/advisories/GHSA-jfh8-c2jp-5v3q
 * https://logging.apache.org/log4j/2.x/security.html
+* https://mail-archives.apache.org/mod_mbox/www-announce/202112.mbox/%3C643bc702-4b46-411b-4980-1fcf637dbb11@apache.org%3E
 * https://github.com/apache/logging-log4j2/pull/608
 * https://github.com/tangxiaofeng7/apache-log4j-poc

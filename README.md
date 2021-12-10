@@ -10,7 +10,7 @@
 1. 寻找部署目录下的 `log4j2-core` 组件  
    执行以下命令在文件系统中搜索
    ```
-   find . -name '*log4j2-core*.jar'
+   find . -name '*log4j-core*.jar'
    ```
 
 2. 对找到的 `log4j2-core` JAR 包实施缓解措施

@@ -1,4 +1,4 @@
-# Log4j2 日志内容 JNDI 注入 RCE 缓解措施
+# Log4j2 日志内容 JNDI 注入 RCE 缓解措施（log4j2 官方认可）
 
 国际镜像：https://github.com/zhangyoufu/log4j2-without-jndi
 国内镜像：https://code.aliyun.com/zhangyoufu/log4j2-without-jndi/tree/master
@@ -32,6 +32,12 @@
 * 该缓解手段避免了禁用 lookup 功能对 `${date:xxx}`、`${ctx:xxx}` 等正常功能的影响
 * `log4j2.xml` / `log4j2.properties` / `-classpath` 对于某些部署场景不好修改，或者在运行时被程序指定/覆盖，直接修改 jar 包更简单有效
 
+## 官方认可
+
 该缓解手段得到 [log4j2 官方认可](https://github.com/apache/logging-log4j2/pull/608#issuecomment-990474429)：
 
 > Thank you @zhangyoufu for the suggested workaround for older versions of log4j to remove the JndiLookup.class class! The team likes your idea and we will include the workaround you suggested in the release notes and announcement email. Many thanks!
+
+## Credit
+
+Youfu Zhang of Chaitin (长亭科技)

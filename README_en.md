@@ -11,15 +11,11 @@
    ```
 
 2. Apply mitigation against `log4j2-core` JARs found above
-   * Method 1: Use `zip`/`unzip` command (recommended)
-     1. Execute the following command to remove `JndiLookup.class` from the JAR you specified
-        ```
-        zip -q -d 'JAR_path_here' org/apache/logging/log4j/core/lookup/JndiLookup.class
-        ```
-     2. Execute the following command to check the result (ensure that there is no `JndiLookup.class` in the output)
-        ```
-        unzip -l 'JAR_path_here' org/apache/logging/log4j/core/lookup/JndiLookup.class
-        ```
+   * Method 1: Use `zip` command (recommended)
+     Execute the following command to remove `JndiLookup.class` from the JAR you specified
+     ```
+     zip -q -d 'JAR_path_here' org/apache/logging/log4j/core/lookup/JndiLookup.class
+     ```
    * Method 2: Replace your JAR with patched JAR from this repo (under `log4j2-core/` directory)  
      All JARs included in this repo comes from maven, with `JndiLookup.class` removed and no further modification. You can replace your JAR safely if the filename matches.
 
@@ -31,7 +27,7 @@ To improve compatibility on some JRE that does not provide JNDI, changeset [LOG4
 When `JndiLookup` instansiation failed, there will be only warning log instead of throw an exception.
 We can effectively stop `${jndi:xxx}` handler from registering by removing `JndiLookup.class` file, thus avoid triggering the vulnerability.
 
-* This mitigation applies to all stable release of log4j2, while `log4j2.formatMsgNoLookups` option only applies to log4j2 ≥ 2.10
+* This mitigation applies to all stable release of log4j2, while `log4j2.formatMsgNoLookups` option only applies to `log4j2 ≥ 2.10`
 * This mitigation does not disable all lookups, the functionality of `${date:xxx}`, `${ctx:xxx}`, etc are preserved.
 * Sometimes modification to `log4j2.xml` / `log4j2.properties` / `-classpath` are not trivial, or may be overridden on runtime. Modifying JAR is much simpler and effective.
 
@@ -54,3 +50,4 @@ This mitigation was [acknowledged by log4j2 team](https://github.com/apache/logg
 
 * https://github.com/Glavo/log4j-patch (override original implementation by prepend it into classpath)
 * https://github.com/LoliKingdom/NukeJndiLookupFromLog4j (remove "jndi" handler on runtime)
+* JVM argument `-Dlog4j2.formatMsgNoLookups=true` or environment variable `LOG4J_FORMAT_MSG_NO_LOOKUPS=true` (only applies to `log4j-core ≥ 2.10`)
